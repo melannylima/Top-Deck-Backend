@@ -1,3 +1,3 @@
 module.exports = {
-    pokemons: require("./list.routes.js")
+    lists: require("./list.routes.js")
 }
