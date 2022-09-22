@@ -2,7 +2,7 @@
 const express = require('express')
 
 /* == Internal Modules == */
-
+const routes = require('./routes');
 /* == Express Instance == */
 const app = express()
 
@@ -10,10 +10,17 @@ const app = express()
 const PORT = process.env.PORT || 3002;
 
 /* == DB connection == */
+// require('./config/db.connection');
 
 /* == Middleware == */
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 /* == Routes == */
+// app.use('/', routes.lists)
+
+
+/* == Listen On Port == */
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
