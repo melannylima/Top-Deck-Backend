@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
+// make sure routes work with the API
+
 const ctrls = require("../controllers")
 //google- RESTful api design-dont put new edit delete after /cards
 //Create Deck (post/create) -- /deck/new

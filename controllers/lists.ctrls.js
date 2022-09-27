@@ -10,6 +10,7 @@ const indexOfDecks = (req, res) => {
         })
     })
 }
+
 // index of pokemon cards
 const indexOfCards = (req, res) => {
     db.Card.find({ 
