@@ -1,3 +1,5 @@
 module.exports = {
-    lists: require("./list.routes.js")
+    lists: require("./lists.routes.js")
 }
+
+

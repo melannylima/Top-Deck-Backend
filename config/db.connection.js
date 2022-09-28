@@ -1,12 +1,12 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/topdeckDB'
+const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/pokemondb'
 
-mongoose.connect(connectionStr)
+mongoose.connect(connectionStr);
 
-// listeners to monitor database connection
-mongoose.connection.on('connected', () => console.log('DB is connected!!'))
+// set up listeners to monitor your database connection
+mongoose.connection.on('connected', ()=> console.log('DB connected... 🙌🙌🙌'));
 
-mongoose.connection.on('error', (err) => console.log(err.message))
+mongoose.connection.on('error', (err)=> console.log(err.message));
 
-mongoose.connection.on('disconnected', () => console.log('mongoose is disconnected'))
+mongoose.connection.on('disconnected', ()=> console.log('mongoose disconnected'));
