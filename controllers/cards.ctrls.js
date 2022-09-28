@@ -25,6 +25,19 @@ const getCardById = (req, res) => {
     })
 }
 
+// this will return an array and we only need one card by ID
+const indexOfCardsInDeck = (req, res) => {
+    db.Card.find({
+        deckId: req.params.deckId
+    }, (err, card) => {
+        if(err) return res.status(404).json({error: err.message})
+        return res.status(200).json({
+            card,
+            requestedAt: new Date().toLocaleDateString()
+        })
+    })
+}
+
 
 // create a Card in the deck with req.body - 
 const create = (req, res) => {
@@ -52,5 +65,6 @@ module.exports = {
     index,
     create,
     destroy,
-    getCardById
+    getCardById,
+    indexOfCardsInDeck
 }

@@ -4,20 +4,11 @@ const cardSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    default: 'My Card',
 },
-    id: {
-        type: Number,
-        required: true,
-        default: "my ID",
-        unique: true,
-        required: true,
-},
-
+// add image as a stretch goal 
     deckId: {
-        type: Number,
+        type: String,
         required: true,
-
     }
 })
 
