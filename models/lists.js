@@ -4,11 +4,7 @@ const deckSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
-    },
-  cards: {
-    type: Array,
-    default: []
-  }
+    }
 })
 
 const Deck = mongoose.model('Deck', deckSchema)
