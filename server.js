@@ -5,6 +5,8 @@ const express = require('express')
 
 /* == Internal Modules == */
 
+/* == Require Cors == */
+const cors = require('cors')
 /* == Express Instance == */
 const app = express()
 
@@ -15,6 +17,7 @@ const PORT = process.env.PORT || 3002;
 require('./config/db.connection')
 
 /* == Middleware == */
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
