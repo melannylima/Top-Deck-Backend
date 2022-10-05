@@ -4,17 +4,17 @@ const cors = require('cors')
 // ****need to make sure below lines work
 const whitelist = ['http://localhost', 'https://fathomless-sierra-68956.herokuapp.com', undefined]
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log('debug', origin)
-    console.log(origin)
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log('debug', origin)
+//     console.log(origin)
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 /* == External Modules == */
 const express = require('express')
@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 3002;
 require('./config/db.connection')
 
 /* == Middleware == */
-app.use(cors(corsOptions))
+app.use(cors('*'))
 //how do i add session below?
 //const session = require('express-session')
 
