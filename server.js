@@ -21,6 +21,8 @@ const express = require('express')
 require('dotenv').config();
 /* == Internal Modules == */
 
+/* == Require Cors == */
+const cors = require('cors')
 /* == Express Instance == */
 const app = express()
 
@@ -34,6 +36,7 @@ require('./config/db.connection')
 app.use(cors('*'))
 //how do i add session below?
 //const session = require('express-session')
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
