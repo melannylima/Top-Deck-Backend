@@ -29,7 +29,6 @@ router.delete("/cards/:id", ctrls.cards.destroy)
 
 
 // Stretch Goal Routes:
-// Delete deck (delete) -- /deck/delete
 // Create account (post/create) -- /account/new
 // Update shopping cart (put/update) -- /cart
 // Update card tag (put/update) -- /card/:id/edit

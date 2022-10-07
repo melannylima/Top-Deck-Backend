@@ -2,7 +2,7 @@ const routes = require('./routes')
 const cors = require('cors')
 
 // ****need to make sure below lines work
-const whitelist = ['http://localhost', 'https://fathomless-sierra-68956.herokuapp.com', undefined]
+// const whitelist = ['http://localhost', 'https://fathomless-sierra-68956.herokuapp.com', undefined]
 
 // const corsOptions = {
 //   origin: function (origin, callback) {
