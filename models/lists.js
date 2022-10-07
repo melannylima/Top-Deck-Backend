@@ -3,12 +3,8 @@ const mongoose = require('mongoose');
 const deckSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
-    },
-  cards: {
-    type: Array,
-    default: []
-  }
+    required: true,
+    }
 })
 
 const Deck = mongoose.model('Deck', deckSchema)

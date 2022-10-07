@@ -9,7 +9,11 @@ const cardSchema = new mongoose.Schema({
     deckId: {
         type: String,
         required: true,
-    }
+},
+    image:  {
+    type: String,
+    required: false,
+}
 })
 
 const Card = mongoose.model('Card', cardSchema)

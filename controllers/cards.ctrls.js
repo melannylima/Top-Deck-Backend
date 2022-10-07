@@ -5,8 +5,7 @@ const index = (req, res) => {
     db.Card.find({}, (err, cards) => {
         if(err) return res.status(404).json({error: err.message})
         return res.status(200).json({
-            cards,
-            requestedAt: new Date().toLocaleDateString()
+            cards
         })
     })
 }
@@ -19,8 +18,7 @@ const getCardById = (req, res) => {
     }, (err, card) => {
         if(err) return res.status(404).json({error: err.message})
         return res.status(200).json({
-            card,
-            requestedAt: new Date().toLocaleDateString()
+            card
         })
     })
 }
@@ -32,8 +30,7 @@ const indexOfCardsInDeck = (req, res) => {
     }, (err, card) => {
         if(err) return res.status(404).json({error: err.message})
         return res.status(200).json({
-            card,
-            requestedAt: new Date().toLocaleDateString()
+            card
         })
     })
 }
@@ -52,6 +49,7 @@ const destroy = (req, res) => {
     db.Card.findByIdAndDelete(req.params.id, (error, deletedCard) => {
         //if no Card is found, let the frontend know with the json error message
         if(!deletedCard) return res.status(400).json({error: "Card not found"})
+        
         //if an error is produced, display it
         if(error) return res.status(400).json({error: error.message})
         return res.status(200).json({
