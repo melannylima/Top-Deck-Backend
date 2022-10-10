@@ -1,6 +1,6 @@
 const db = require('../models')
 
-// get all the decks 
+// get all the decks
 const indexOfDecks = (req, res) => {
     db.Deck.find({}, (err, lists) => {
         if(err) return res.status(404).json({error: err.message})
@@ -11,7 +11,7 @@ const indexOfDecks = (req, res) => {
 }
 // index of pokemon cards in deck
 const indexOfCards = (req, res) => {
-    db.Card.find({ 
+    db.Card.find({
     deckId: req.body.deckId
     }, (err, lists) => {
         if(err) return res.status(404).json({error: err.message})
@@ -37,7 +37,7 @@ const destroy = (req, res) => {
 
         //if an error is produced, display it
         if(error) return res.status(400).json({error: error.message})
-        
+
         return res.status(200).json({
             message: `Deck ${deletedDeck.name} deleted successfully! `
         })
@@ -47,11 +47,11 @@ const destroy = (req, res) => {
 //updating a single deck
 const update = (req, res) => {
     db.Deck.findByIdAndUpdate(
-        req.params.id, 
+        req.params.id,
         {
             $set: req.body
-        }, 
-        {new: true}, 
+        },
+        {new: true},
         (err, updatedDeck) => {
             if(err) return res.status(400).json({error: err.message})
             return res.status(200).json(updatedDeck)

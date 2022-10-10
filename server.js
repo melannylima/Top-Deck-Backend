@@ -1,5 +1,5 @@
 const routes = require('./routes')
-const cors = require('cors')
+// const cors = require('cors')
 
 // ****need to make sure below lines work
 // const whitelist = ['http://localhost', 'https://fathomless-sierra-68956.herokuapp.com', undefined]
@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 //     secret: process.env.SESSION_SECRET,
 //     resave: false,
 //     saveUninitialized: false,
-    
+
 //   })
 // )
 
