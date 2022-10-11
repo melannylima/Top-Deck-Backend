@@ -2,19 +2,19 @@ const routes = require('./routes')
 // const cors = require('cors')
 
 // ****need to make sure below lines work
-// const whitelist = ['http://localhost', 'https://fathomless-sierra-68956.herokuapp.com', undefined]
+const whitelist = ['http://localhost:3002']
 
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     console.log('debug', origin)
-//     console.log(origin)
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log('debug', origin)
+    console.log(origin)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
 /* == External Modules == */
 const express = require('express')
